@@ -155,46 +155,47 @@ app.innerHTML = `
       </div>
     </section>
 
-    <section class="slide slide--lod" data-slide="2" aria-label="The first performance wall" aria-hidden="true">
+    <section class="slide slide--world-model" data-slide="2" aria-label="From visual city to world model" aria-hidden="true">
       <div class="slide__inner">
-        <div class="chapter-label reveal reveal--1"><span>THE FIRST WALL</span> · LOD</div>
-        <div class="lod-heading">
-          <h2 class="slide-title reveal reveal--2">Reality<br /><em>pushes back.</em></h2>
+        <div class="chapter-label reveal reveal--1"><span>THE FIRST WALL</span> · WORLD MODEL</div>
+        <div class="world-model-heading">
+          <h2 class="slide-title reveal reveal--2">It looked like a city.<br /><em>But it had no meaning.</em></h2>
           <p class="slide-lede reveal reveal--3">
-            The city could generate faster than the browser could load it. Distance had to become a budget.
+            The game could not tell a road from an obstacle. That wall became the curriculum.
           </p>
         </div>
 
-        <div class="lod-visual reveal reveal--4" aria-label="Level of detail concept diagram">
-          <div class="lod-stage lod-stage--near">
-            <div class="lod-stage__city" aria-hidden="true">
-              <i style="--h: 84%"></i><i style="--h: 63%"></i><i style="--h: 96%"></i><i style="--h: 72%"></i><i style="--h: 55%"></i>
-            </div>
-            <p><b>NEAR</b><span>Full detail</span></p>
-            <strong>01</strong>
-          </div>
-          <div class="lod-arrow" aria-hidden="true"><span></span><b>DISTANCE</b></div>
-          <div class="lod-stage lod-stage--mid">
-            <div class="lod-stage__city" aria-hidden="true">
-              <i style="--h: 74%"></i><i style="--h: 52%"></i><i style="--h: 86%"></i><i style="--h: 61%"></i>
-            </div>
-            <p><b>MID</b><span>Reduced detail</span></p>
-            <strong>02</strong>
-          </div>
-          <div class="lod-arrow" aria-hidden="true"><span></span><b>DISTANCE</b></div>
-          <div class="lod-stage lod-stage--far">
-            <div class="lod-stage__city" aria-hidden="true">
-              <i style="--h: 62%"></i><i style="--h: 43%"></i><i style="--h: 69%"></i>
-            </div>
-            <p><b>FAR</b><span>Silhouette only</span></p>
-            <strong>03</strong>
-          </div>
+        <div class="world-model-timeline reveal reveal--4" aria-label="Skyline Rush evolving from obstacle field to road-aware gameplay">
+          <figure class="world-step">
+            <img src="/imgs/1.png" alt="Early Skyline Rush obstacle field" />
+            <figcaption><b>01 · SHIP</b><span>Playable obstacle field</span></figcaption>
+          </figure>
+          <figure class="world-step">
+            <img src="/imgs/2.png" alt="Early Skyline Rush city-shaped scene" />
+            <figcaption><b>02 · WALL</b><span>A city with no rules</span></figcaption>
+          </figure>
+          <figure class="world-step world-step--model">
+            <img src="/imgs/3.png" alt="Skyline Rush with a procedural road network" />
+            <figcaption><b>03 · ABSTRACT</b><span>Queryable road model</span></figcaption>
+          </figure>
+          <figure class="world-step world-step--unlock">
+            <img src="/imgs/4.png" alt="Gate Rush using the procedural road network" />
+            <figcaption><b>04 · UNLOCK</b><span>Gate Rush</span></figcaption>
+          </figure>
         </div>
 
-        <div class="lesson-bar reveal reveal--5">
+        <div class="learning-strip reveal reveal--5" aria-label="Things learned while building Skyline Rush">
+          <span class="learning-strip__label">WHAT I LEARNED</span>
+          <span>PROCEDURAL GENERATION</span>
+          <span>FLIGHT DYNAMICS</span>
+          <span>3D ORIENTATION / QUATERNIONS</span>
+          <span>INPUT ABSTRACTION</span>
+        </div>
+
+        <div class="lesson-bar lesson-bar--learning reveal reveal--5">
           <span class="lesson-bar__icon">↳</span>
-          <p><b>THE SHIFT</b> AI produced the world. Engineering judgment made it playable.</p>
-          <span class="lesson-bar__result">LOD BY DISTANCE</span>
+          <p><b>THE LOOP</b> Ship fast. Hit reality. Learn deeply. Unlock capability.</p>
+          <span class="lesson-bar__result">WALL → LEARNING → CAPABILITY</span>
         </div>
       </div>
     </section>
@@ -247,73 +248,78 @@ app.innerHTML = `
               <b>Google 3D Tiles</b>
             </div>
           </div>
-          <p class="tool-note reveal reveal--5">FABLE · CLAUDE CODE · CODEX</p>
         </div>
       </div>
     </section>
 
-    <section class="slide slide--deep" data-slide="4" aria-label="HLOD performance optimization" aria-hidden="true">
+    <section class="slide slide--deep" data-slide="4" aria-label="Frame-paced streaming performance optimization" aria-hidden="true">
       <div class="slide__inner deep-layout">
         <div class="deep-heading">
-          <div class="chapter-label reveal reveal--1"><span>ONE WEEK DEEPER</span> · HLOD</div>
-          <h2 class="slide-title reveal reveal--2">Prototype speed found the problem.<br /><em>Systems depth solved it.</em></h2>
+          <div class="chapter-label reveal reveal--1"><span>ONE WEEK DEEPER</span> · FRAME PACING</div>
+          <h2 class="slide-title reveal reveal--2">The average looked fast.<br /><em>The worst frames still broke flight.</em></h2>
         </div>
 
-        <div class="metrics-panel reveal reveal--3">
-          <div class="metrics-panel__title">
-            <span>FRAME TIME</span>
-            <span>LOWER IS BETTER ↓</span>
+        <div class="perf-compare-card reveal reveal--3" data-media-card>
+          <div class="perf-compare-card__topline">
+            <span><i class="compare-dot compare-dot--before"></i> PROTOTYPE · BURSTY WORK</span>
+            <span>SAME CITY · SAME FLIGHT</span>
+            <span><i class="compare-dot compare-dot--after"></i> SYSTEM · FRAME-PACED</span>
           </div>
-          <div class="metric">
-            <div class="metric__label"><b>p95</b><span>frame time</span></div>
-            <div class="metric__bars">
-              <div class="metric-bar metric-bar--before" style="--bar: 100%"><span>33.3 ms</span></div>
-              <div class="metric-bar metric-bar--after" style="--bar: 50%"><span>16.7 ms</span></div>
+          <div class="perf-compare-card__viewport">
+            <div class="perf-video-placeholder" aria-hidden="true">
+              <span>BEFORE</span>
+              <i></i>
+              <span>AFTER</span>
+              <p>Add <code>public/media/perf_compare.mp4</code></p>
             </div>
-            <strong>−50%</strong>
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Before and after frame pacing comparison">
+              <source src="/media/perf_compare.mp4" type="video/mp4" />
+            </video>
+            <div class="perf-video-vignette"></div>
+            <span class="perf-watch-label">WATCH p95 / p99 FRAME TIME</span>
           </div>
-          <div class="metric">
-            <div class="metric__label"><b>p99</b><span>frame time</span></div>
-            <div class="metric__bars">
-              <div class="metric-bar metric-bar--before" style="--bar: 100%"><span>100 ms</span></div>
-              <div class="metric-bar metric-bar--after" style="--bar: 33.3%"><span>33.3 ms</span></div>
-            </div>
-            <strong>−67%</strong>
-          </div>
-          <div class="metrics-panel__legend"><span><i class="before"></i> Before HLOD</span><span><i class="after"></i> After HLOD</span></div>
         </div>
 
-        <div class="hlod-panel reveal reveal--4">
-          <div class="hlod-copy">
+        <aside class="performance-learning reveal reveal--4">
+          <div class="performance-learning__copy">
             <span class="mini-label">THE SECOND WALL</span>
-            <h3>A real city is a hierarchy.</h3>
-            <p>Load the right clusters at the right time. Shed detail before the frame budget breaks.</p>
+            <h3>The world arrived in bursts.</h3>
+            <p>Average FPS hid the long frames that broke control. The fix was to budget work across frames.</p>
           </div>
-          <div class="hlod-tree" aria-label="Hierarchical level of detail diagram">
-            <div class="tree-node tree-node--root">TAIWAN</div>
-            <div class="tree-line tree-line--root"></div>
-            <div class="tree-branches">
-              <div class="tree-branch">
-                <div class="tree-node tree-node--cluster">NORTH</div>
-                <div class="tree-leaves"><i></i><i></i><i></i></div>
+
+          <div class="fps-gain" aria-label="FPS derived from p95 and p99 frame-time improvement">
+            <div class="fps-gain__title">
+              <span>DERIVED FPS · 1000 / FRAME TIME</span>
+              <span>HIGHER IS BETTER ↑</span>
+            </div>
+            <div class="fps-gain__grid">
+              <div class="fps-gain__metric" style="--before-width: 51.72%">
+                <span class="fps-gain__percentile">p95 <small>FRAME-TIME</small></span>
+                <div class="fps-gain__values"><span>30</span><i>→</i><strong>58 FPS</strong></div>
+                <div class="fps-gain__bars" aria-hidden="true"><i></i><b></b></div>
               </div>
-              <div class="tree-branch">
-                <div class="tree-node tree-node--cluster">CENTRAL</div>
-                <div class="tree-leaves"><i></i><i></i><i></i></div>
-              </div>
-              <div class="tree-branch">
-                <div class="tree-node tree-node--cluster">SOUTH</div>
-                <div class="tree-leaves"><i></i><i></i><i></i></div>
+              <div class="fps-gain__metric" style="--before-width: 66.67%">
+                <span class="fps-gain__percentile">p99 <small>FRAME-TIME</small></span>
+                <div class="fps-gain__values"><span>20</span><i>→</i><strong>30 FPS</strong></div>
+                <div class="fps-gain__bars" aria-hidden="true"><i></i><b></b></div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="deep-footer reveal reveal--5">
-          <span><b>2 DAYS</b> to prove it could work</span>
-          <i></i>
-          <span><b>1 WEEK</b> to make it hold</span>
-        </div>
+          <div class="performance-learnings" aria-label="Things learned while optimizing Taiwan Drone Flight">
+            <span class="performance-learnings__label">WHAT I LEARNED</span>
+            <span>TAIL LATENCY</span>
+            <span>FRAME-TIME PROFILING</span>
+            <span>STREAMING BACKPRESSURE</span>
+            <span>ATOMIC HANDOVER</span>
+          </div>
+
+          <div class="performance-principle">
+            <span>THE UPGRADE</span>
+            <strong>Predictable beats peak.</strong>
+          </div>
+        </aside>
+
       </div>
     </section>
 
@@ -534,7 +540,7 @@ function configureDemoLinks() {
 }
 
 function configureVideos() {
-  document.querySelectorAll(".media-card video").forEach((video) => {
+  document.querySelectorAll("[data-media-card] video").forEach((video) => {
     const card = video.closest("[data-media-card]");
     const markReady = () => card?.classList.add("has-video");
     video.addEventListener("loadeddata", markReady, { once: true });

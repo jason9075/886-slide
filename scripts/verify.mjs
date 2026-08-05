@@ -8,6 +8,10 @@ const requiredFiles = [
   "src/styles.css",
   "public/linkedin-qr.svg",
   "public/skyline-rush-qr.svg",
+  "public/imgs/1.png",
+  "public/imgs/2.png",
+  "public/imgs/3.png",
+  "public/imgs/4.png",
   "SPEAKER_NOTES.md",
   ".env.example",
 ];
@@ -24,8 +28,15 @@ if (slideCount !== 6) throw new Error(`Expected 6 slides, found ${slideCount}`);
 const requiredCopy = [
   "I built a playable city",
   "Use AI to ship fast",
-  "33.3 ms",
-  "16.7 ms",
+  "PROCEDURAL GENERATION",
+  "FLIGHT DYNAMICS",
+  "QUATERNIONS",
+  "INPUT ABSTRACTION",
+  "The average looked fast",
+  "DERIVED FPS",
+  "58 FPS",
+  "TAIL LATENCY",
+  "ATOMIC HANDOVER",
   "Bring the problem",
   "jason-kuan-03552570",
 ];
@@ -40,6 +51,7 @@ if (demoButtons !== 2) throw new Error(`Expected 2 live-demo buttons, found ${de
 const mediaFiles = [
   "public/media/skyline-rush.mp4",
   "public/media/taiwan-drone-flight.mp4",
+  "public/media/perf_compare.mp4",
 ];
 const missingMedia = mediaFiles.filter((file) => !existsSync(resolve(root, file)));
 

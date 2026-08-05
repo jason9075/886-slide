@@ -14,6 +14,7 @@ const mimeTypes = {
   ".js": "text/javascript; charset=utf-8",
   ".json": "application/json; charset=utf-8",
   ".mp4": "video/mp4",
+  ".png": "image/png",
   ".svg": "image/svg+xml; charset=utf-8",
   ".webm": "video/webm",
 };
@@ -55,6 +56,7 @@ function fileForPath(pathname) {
   if (pathname === "/") return resolve(PROJECT_ROOT, "index.html");
   if (pathname === "/linkedin-qr.svg") return resolve(PUBLIC_ROOT, "linkedin-qr.svg");
   if (pathname === "/skyline-rush-qr.svg") return resolve(PUBLIC_ROOT, "skyline-rush-qr.svg");
+  if (pathname.startsWith("/imgs/")) return safePath(PUBLIC_ROOT, pathname.slice(1));
   if (pathname.startsWith("/media/")) return safePath(PUBLIC_ROOT, pathname.slice(1));
   if (pathname.startsWith("/src/")) return safePath(PROJECT_ROOT, pathname.slice(1));
   return null;
