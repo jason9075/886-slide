@@ -24,7 +24,7 @@ Target length: **about 90 seconds** (roughly 200 spoken words). Keep the embedde
 
 ## Slide 6 — Closing (1:09–1:30)
 
-> I have over ten years in computer vision and product systems. Now I want to build something interesting in physical and spatial AI. If you have a real problem or an ambitious team, let’s talk. Maybe we can build something meaningful—and fun—together. Bring the problem. I’ll bring the build.
+> I have over ten years in computer vision and product systems. Now I want to do something interesting with digital twins, physical AI, and spatial AI. If you have a real problem or an ambitious team, let’s talk. Maybe we can build something meaningful—and fun—together. Bring the problem. I’ll bring the build.
 
 ## Delivery Notes
 
